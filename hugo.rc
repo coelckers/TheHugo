@@ -1,0 +1,87 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// German (Germany) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_DEU)
+#ifdef _WIN32
+LANGUAGE LANG_GERMAN, SUBLANG_GERMAN
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// BINARY
+//
+
+IDR_SPRITE              BINARY  DISCARDABLE     "sprite.spr"
+IDR_HUGO                BINARY  DISCARDABLE     "hugo.spr"
+IDR_TEXT                BINARY  DISCARDABLE     "htext.spr"
+IDR_BLEND               BINARY  DISCARDABLE     "blend.spr"
+IDR_PALETTE             BINARY  DISCARDABLE     "pal.bmp"
+IDR_CHARSET             BINARY  DISCARDABLE     "hugochr.dat"
+IDR_EDIMENU             BINARY  DISCARDABLE     "Edimenu.bmp"
+IDR_POINTER             BINARY  DISCARDABLE     "pointer.spr"
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// WAVE
+//
+
+IDW_PING                WAVE    DISCARDABLE     "ping.wav"
+IDW_DEAD                WAVE    DISCARDABLE     "force0.wav"
+IDW_FORCE               WAVE    DISCARDABLE     "force1.wav"
+IDW_WARP                WAVE    DISCARDABLE     "boar.wav"
+#endif    // German (Germany) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+
