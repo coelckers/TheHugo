@@ -1,0 +1,19 @@
+
+set @9,440
+malloc 1,128000
+malloc 2,@9+@9*64
+mset 2,0,@9+@9*64,0
+bload 1,"winhugo.dat"
+for @1,0,@9-1
+	cprint "%d\r",@1
+	for @2,0,7
+		for @3,0,7
+			peek 1,@1/20*16*320+@1%20*16+@2*320+@3 -> @4
+			if @4!=0 && @4!=255
+				poke 2,@1,1
+			end
+			poke 2,@9+@1*64+@2*8+@3,@4
+		next
+	next
+next
+bsave 2,"hugo.chr"
