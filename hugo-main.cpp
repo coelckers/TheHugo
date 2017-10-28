@@ -1,18 +1,11 @@
 #include "hugo.h"
 
-tDIBTranslateSprite pDIBTranslateSprite;
-tDIBTranslateSpriteEx pDIBTranslateSpriteEx;
 
 DIBSection offscreen;
 BOOL fActive=TRUE;
 HWND hGameWindow;
 LPDIRECTSOUND lpds;
 int drawx, drawy, drawscale;
-/*
-LPDIRECTDRAW lpdd;
-LPDIRECTDRAWSURFACE lpdds=NULL,lpddsbb;
-LPDIRECTDRAWPALETTE lpddp,lpddpb;
-*/
 HANDLE hEvent;
 LPBITMAPFILEHEADER lpbfPal;
 int cdNumTracks;
@@ -249,11 +242,6 @@ int WINAPI WinMain(HINSTANCE,HINSTANCE,char * ,int)
 	__int64 pff,pfc,nextpfc;
 	int c;
 
-	HMODULE ws = LoadLibrary("WSYSKERN.DLL");
-
-	pDIBTranslateSprite = (tDIBTranslateSprite)GetProcAddress(ws, "DIBTranslateSprite");
-	pDIBTranslateSpriteEx = (tDIBTranslateSpriteEx)GetProcAddress(ws, "DIBTranslateSpriteEx");
-
 	//hEvent=CreateEvent(NULL,TRUE,FALSE,NULL);
 	lpbfPal=(LPBITMAPFILEHEADER)GetResourcePointer(NULL,MAKEINTRESOURCE(IDR_PALETTE),"BINARY");
 	wClass.style=CS_VREDRAW|CS_HREDRAW|CS_BYTEALIGNCLIENT;
@@ -282,16 +270,11 @@ int WINAPI WinMain(HINSTANCE,HINSTANCE,char * ,int)
 	pff=(pff+28)/56;
 	QueryPerformanceCounter((LARGE_INTEGER*)&nextpfc);
 	nextpfc+=pff;
-	const RECT rClip={0,0,320,200};
-	ClipCursor(&rClip);
 	while(1)
 	{
 		while (PeekMessage(&msg,NULL,0,0,PM_REMOVE))
 		{
 			if (msg.message==WM_QUIT) goto brk2;
-			char buf[10];
-			wsprintf(buf, "%d\n", msg.message);
-			OutputDebugString(buf);
 			TranslateMessage(&msg);
 			DispatchMessage(&msg);
 			if (msg.message == WM_PAINT) break;

@@ -1,16 +1,5 @@
 
-
-typedef int (WINAPI *tDIBTranslateSprite)(
-	char *dstDIB, LPBITMAPINFOHEADER, int xpos, int ypos,
-	int	mirr_x, int mirr_y, char * sprbuf, int	index, const char *);
-typedef int (WINAPI *tDIBTranslateSpriteEx)(
-	char *	dstDIB, LPBITMAPINFOHEADER, int xpos, int ypos,
-	int		mirr_x, int mirr_y, int clip_left, int	clip_top,
-	int clip_right, int clip_bottom, char *sprbuf, int	index, const char *);
-
-
-extern tDIBTranslateSprite pDIBTranslateSprite;
-extern tDIBTranslateSpriteEx pDIBTranslateSpriteEx;
+extern LPBITMAPFILEHEADER lpbfPal;
 
 class DIB
 {
